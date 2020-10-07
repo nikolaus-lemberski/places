@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: places-service
+  cloud:
+    discovery:
+      enabled: false
+  datasource:
+    initialization-mode: always
+
+weather:
+  service:
+    address: http://localhost:8089
+
+---
+spring:
+  profiles: cloud
+  cloud:
+    discovery:
+      enabled: true
+    services:
+      registrationMethod: direct
+
+weather:
+  service:
+    address: //weather-service

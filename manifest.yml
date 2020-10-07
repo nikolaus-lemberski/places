@@ -1,0 +1,11 @@
+---
+applications:
+  - name: places
+    buildpacks:
+    - java_buildpack_offline
+    path: ./target/places-0.0.1-SNAPSHOT.jar
+    services:
+      - mysqldb
+      - registry
+    env:
+      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 11.+ }}'
