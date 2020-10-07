@@ -1,11 +1,15 @@
 spring:
   application:
-    name: places
+    name: places-service
   cloud:
     discovery:
       enabled: false
   datasource:
     initialization-mode: always
+
+weather:
+  service:
+    address: http://localhost:8089
 
 ---
 spring:
@@ -15,6 +19,7 @@ spring:
       enabled: true
     services:
       registrationMethod: direct
-    loadbalancer:
-      ribbon:
-        enabled: false
+
+weather:
+  service:
+    address: //weather-service
