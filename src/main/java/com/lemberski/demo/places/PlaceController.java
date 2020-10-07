@@ -17,7 +17,7 @@ public class PlaceController {
     private PlaceRepository placeRepository;
 
     @Autowired
-    private WeatherService weatherService;
+    private WeatherClient weatherClient;
 
     @GetMapping("/places/{id}")
     public ResponseEntity<?> getPlaceWithWeather(@PathVariable Long id) {
@@ -34,7 +34,7 @@ public class PlaceController {
 
             @SuppressWarnings("rawtypes")
             public Map getWeather() {
-                return weatherService.getWeather(place.get().getName());
+                return weatherClient.weather(place.get().getName());
             }
         });
     }
