@@ -4,6 +4,8 @@ applications:
     buildpacks:
     - java_buildpack_offline
     path: ./target/places-0.0.1-SNAPSHOT.jar
+    routes:
+      - route: places.apps.internal
     services:
       - mysqldb
       - registry

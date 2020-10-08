@@ -1,6 +1,6 @@
 spring:
   application:
-    name: places-service
+    name: places
   cloud:
     discovery:
       enabled: false
